@@ -7,15 +7,19 @@ const Main = () => {
     decCount,
   } = useGame()
 
+  const flexStyle = {display: "flex", gap: "1rem", justifyContent: "center"}
+
   return (
     <>
-      <div className="card">
-        <button onClick={() => incCount(1)}>
-          +
-        </button>
-        <button onClick={() => decCount(1)}>
-          -
-        </button>
+      <div>
+        <div style={flexStyle}>
+          <button onClick={() => incCount(1)}>
+            +
+          </button>
+          <button onClick={() => decCount(1)}>
+            -
+          </button>
+        </div>
         <p>
           count is {count}
         </p>
