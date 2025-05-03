@@ -4,5 +4,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-size: 62.5%;
   user-select: none;
+}
+
+body {
+  /* 16px */
+  font-size: 1.6rem;
 }
