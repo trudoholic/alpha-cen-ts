@@ -20,9 +20,8 @@ const Main = () => {
             -
           </button>
         </div>
-        <p>
-          count is {count}
-        </p>
+        <p>Lorem Ipsum Test 1</p>
+        <p>count is {count}</p>
       </div>
     </>
   )
