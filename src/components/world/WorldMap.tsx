@@ -7,7 +7,8 @@ const WorldMap = () => {
       backgroundColor: grey[300],
       position: "absolute",
       // zIndex: 52,
-      top: "8px", left: "8px", width: "756px", height: "756px",
+      top: "8px", left: "8px",
+      width: "756px", height: "756px",
       //------------------------------
       // minWidth: divWidth,
       // padding: "1rem",
