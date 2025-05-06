@@ -1,4 +1,5 @@
 import useGame from "../hooks/useGame"
+import WorldMap from "./world/WorldMap"
 
 const Main = () => {
   const {
@@ -11,6 +12,7 @@ const Main = () => {
 
   return (
     <>
+      <WorldMap/>
       <div>
         <div style={flexStyle}>
           <button onClick={() => incCount(1)}>
