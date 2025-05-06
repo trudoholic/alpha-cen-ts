@@ -1,25 +1,19 @@
-import {cellY, gapY} from "./mapConstants"
+import {ROWS, range} from "./mapConstants"
 import MapRow from "./MapRow"
 
 const MapGrid = (props) => {
-  const {xGrid, yGrid, pGrid, mosaic} = props
-
-  const n = pGrid.length - 1
+  const {xGrid, yGrid} = props
 
   return (
     <div style={{
       position: "absolute",
       top: yGrid + "px", left: xGrid + "px",
     }}>
-      {pGrid.map((p, j) => (
+      {range(ROWS).map((p, row) => (
         <MapRow
-          key={j}
-          // yRow={(cellY + gapY) * j}
-          yRow={(cellY + gapY) * (n - j)}
-          // pRow={p}
-          pRow={p? p.slice(0, 10): " "}
+          key={row}
+          row={row}
           active={false}
-          mosaic={mosaic}
         />
       ))}
     </div>

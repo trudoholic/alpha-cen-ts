@@ -1,26 +1,22 @@
-import {cellX, gapX} from "./mapConstants"
+import {COLS, cellY, gapY, range} from "./mapConstants"
 import MapCell from "./MapCell"
 
 const MapRow = (props) => {
-  const {yRow, pRow, active, mosaic} = props
-  // console.log('Row:', yRow, pRow)
-
-  const small = i => 1 === mosaic && !((i + 2) % 3)
-    || 2 === mosaic && (i % 2)
-    || 3 === mosaic && ((i + 2) % 3)
+  const {row, active} = props
 
   return (
     <div style={{
       position: "absolute",
-      top: yRow + "px", left: 0,
+      top: ((cellY + gapY) * row) + "px", left: 0,
     }}>
-      {pRow.split('').map((p, i) => (
+      {range(COLS).map((_, col) => (
         <MapCell
-          key={i}
-          xCell={(cellX + gapX) * i}
-          pCell={p}
+          key={col}
+          col={col}
+          row={row}
+          pCell={'='}
           active={active}
-          small={small(i)}
+          small={false}
         />
       ))}
     </div>
