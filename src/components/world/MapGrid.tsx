@@ -1,4 +1,4 @@
-import {ROWS, COLS, range} from "./mapConstants"
+import {ROWS, COLS, HeroR, HeroC, range} from "./mapConstants"
 import MapCell from "./MapCell"
 
 const MapGrid = (props) => {
@@ -17,7 +17,7 @@ const MapGrid = (props) => {
               id={COLS * row + col}
               col={col}
               row={row}
-              active={~~(ROWS/2) === row && ~~(COLS/2) === col}
+              active={HeroR === row && HeroC === col}
               small={false}
             />
           ))

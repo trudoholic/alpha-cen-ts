@@ -1,5 +1,5 @@
-import {amber, blueGrey, grey} from "../colors"
-import {cellX, cellY, gapX, gapY} from "./mapConstants"
+import {blueGrey, green, grey} from "../colors"
+import {cellX, cellY, gapX, gapY, HeroR, HeroC} from "./mapConstants"
 
 const MapCell = (props) => {
   const {row, col, id, active, small} = props
@@ -9,7 +9,7 @@ const MapCell = (props) => {
     <div
       style={{
         backgroundColor: blueGrey[200],
-        border: b + "px solid " + (active? amber[700]: grey[500]),
+        border: b + "px solid " + (active? green[700]: grey[500]),
         boxSizing: "border-box",
         position: "absolute",
         top: ((cellY + gapY) * row) + "px",
@@ -20,7 +20,8 @@ const MapCell = (props) => {
       }}
       title={`${id}`}
     >
-      {`${row}:${col}`}
+      {/*{`${row}:${col}`}*/}
+      {`${row - HeroR}:${col - HeroC}`}
     </div>
   )
 }

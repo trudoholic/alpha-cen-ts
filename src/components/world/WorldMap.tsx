@@ -1,4 +1,5 @@
 import {grey} from "../colors"
+import {MapW, MapH, GridX, GridY} from "./mapConstants"
 import MapGrid from "./MapGrid"
 
 const WorldMap = () => {
@@ -8,7 +9,7 @@ const WorldMap = () => {
       position: "absolute",
       // zIndex: 52,
       top: "8px", left: "8px",
-      width: "756px", height: "756px",
+      width: MapW + "px", height: MapH + "px",
       //------------------------------
       // minWidth: divWidth,
       // padding: "1rem",
@@ -17,8 +18,8 @@ const WorldMap = () => {
       // fontSize: "16px", fontWeight: 600,
     }}>
       <MapGrid
-        xGrid={16}
-        yGrid={16}
+        xGrid={GridX}
+        yGrid={GridY}
       />
     </div>
   )
