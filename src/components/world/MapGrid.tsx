@@ -1,8 +1,13 @@
 import {ROWS, COLS, HeroR, HeroC, range} from "./mapConstants"
+import useGame from "../../hooks/useGame"
 import MapCell from "./MapCell"
 
 const MapGrid = (props) => {
   const {xGrid, yGrid} = props
+
+  const {
+    count,
+  } = useGame()
 
   return (
     <div style={{
@@ -19,6 +24,7 @@ const MapGrid = (props) => {
               row={row}
               active={HeroR === row && HeroC === col}
               small={false}
+              rc={`${row - HeroR - count}:${col - HeroC}`}
             />
           ))
         ))

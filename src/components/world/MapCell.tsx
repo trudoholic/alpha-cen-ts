@@ -1,8 +1,8 @@
 import {blueGrey, green, grey} from "../colors"
-import {cellX, cellY, gapX, gapY, HeroR, HeroC} from "./mapConstants"
+import {cellX, cellY, gapX, gapY} from "./mapConstants"
 
 const MapCell = (props) => {
-  const {row, col, id, active, small} = props
+  const {row, col, id, active, small, rc} = props
   const b = small? 4: active? 2: 1
 
   return (
@@ -21,7 +21,7 @@ const MapCell = (props) => {
       title={`${id}`}
     >
       {/*{`${row}:${col}`}*/}
-      {`${row - HeroR}:${col - HeroC}`}
+      {rc}
     </div>
   )
 }
