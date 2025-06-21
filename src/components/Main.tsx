@@ -12,7 +12,7 @@ const Main = () => {
   return (
     <BrowserRouter>
       <>
-        <h1>Simple SPA</h1>
+        <h1>Alpha Cen</h1>
         <nav>
           <ul>
             <li><NavLink to="/">Map</NavLink></li>
