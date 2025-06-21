@@ -1,32 +1,32 @@
-import useGame from "../hooks/useGame"
-import WorldMap from "./world/WorldMap"
+import {
+  BrowserRouter,
+  NavLink,
+  Route,
+  Routes,
+} from "react-router-dom"
+
+import MapPage from "../pages/MapPage"
+import HeroPage from "../pages/HeroPage"
 
 const Main = () => {
-  const {
-    count,
-    incCount,
-    decCount,
-  } = useGame()
-
-  const flexStyle = {display: "flex", gap: "1rem", justifyContent: "center"}
-
   return (
-    <>
-      <WorldMap/>
-      <div>
-        <div style={flexStyle}>
-          <button onClick={() => incCount(1)}>
-            +
-          </button>
-          <button onClick={() => decCount(1)}>
-            -
-          </button>
-        </div>
-        <p>TEST PULL</p>
-        <p>Lorem Ipsum Test</p>
-        <p>count is {count}</p>
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        <h1>Simple SPA</h1>
+        <nav>
+          <ul>
+            <li><NavLink to="/">Map</NavLink></li>
+            <li><NavLink to="/hero">Hero</NavLink></li>
+          </ul>
+        </nav>
+        <main>
+          <Routes>
+            <Route path="/" element={<MapPage />}/>
+            <Route path="/hero" element={<HeroPage />}/>
+          </Routes>
+        </main>
+      </>
+    </BrowserRouter>
   )
 }
 
