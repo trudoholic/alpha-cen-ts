@@ -1,5 +1,5 @@
 import ContextProvider from "./context"
-import './App.css'
+import './App.scss'
 
 import Main from "./components/Main"
 
