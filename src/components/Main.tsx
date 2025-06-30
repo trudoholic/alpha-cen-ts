@@ -1,3 +1,6 @@
+import {Button, Heading, HStack} from "@chakra-ui/react"
+import {blueGrey} from "./colors"
+
 import {
   BrowserRouter,
   NavLink,
@@ -12,13 +15,21 @@ const Main = () => {
   return (
     <BrowserRouter>
       <>
-        <h1>Alpha Cen</h1>
-        <nav>
-          <ul>
-            <li><NavLink to="/">Map</NavLink></li>
-            <li><NavLink to="/hero">Hero</NavLink></li>
-          </ul>
-        </nav>
+        <Heading as="h1" color={blueGrey[100]}>Alpha Cen</Heading>
+        <HStack as="nav">
+          <NavLink to="/"><Button
+            variant="ghost"
+            colorPalette={"teal"} color={blueGrey[300]}
+            aria-label="Map"
+            my={5}
+          >Map</Button></NavLink>
+          <NavLink to="/hero"><Button
+            variant="ghost"
+            colorPalette={"teal"} color={blueGrey[300]}
+            aria-label="Hero"
+            my={5}
+          >Hero</Button></NavLink>
+        </HStack>
         <main>
           <Routes>
             <Route path="/" element={<MapPage />}/>

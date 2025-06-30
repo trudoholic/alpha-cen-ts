@@ -1,13 +1,13 @@
-import ContextProvider from "./context"
 import './App.scss'
+import ContextProvider from "./context"
 
-import Main from "./components/Main"
+import Layout from "./components/Layout"
 
 function App() {
   return (
     <>
       <ContextProvider>
-        <Main/>
+        <Layout/>
       </ContextProvider>
     </>
   )

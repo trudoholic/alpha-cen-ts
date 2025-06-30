@@ -1,5 +1,8 @@
+import {Button, Heading, HStack} from "@chakra-ui/react"
+import {blueGrey} from "../components/colors"
+import {RiArrowLeftSFill, RiArrowRightSFill} from "react-icons/ri"
 import useGame from "../hooks/useGame"
-import WorldMap from "../components/world/WorldMap"
+// import WorldMap from "../components/world/WorldMap"
 
 const MapPage = () => {
   const {
@@ -8,24 +11,22 @@ const MapPage = () => {
     decCount,
   } = useGame()
 
-  const flexStyle = {display: "flex", gap: "1rem", justifyContent: "center"}
-
   return (
     <>
-      <WorldMap/>
-      <div>
-        <div style={flexStyle}>
-          <button onClick={() => incCount(1)}>
-            +
-          </button>
-          <button onClick={() => decCount(1)}>
-            -
-          </button>
-        </div>
-        <p>TEST PULL</p>
-        <p>Lorem Ipsum Test</p>
-        <p>count is {count}</p>
-      </div>
+      {/*<WorldMap/>*/}
+      <HStack>
+        <Button
+          colorPalette={"orange"}
+          onClick={() => decCount(1)}
+        ><RiArrowLeftSFill /></Button>
+        <Button
+          colorPalette={"orange"}
+          onClick={() => incCount(1)}
+        ><RiArrowRightSFill /></Button>
+        <Heading as="h1" color={blueGrey[100]}>
+          count is {count}
+        </Heading>
+      </HStack>
     </>
   )
 }
